@@ -158,6 +158,13 @@ export default {
       if (typeof this.value !== 'undefined') {
         this.$emit('input', newValue)
       }
+    },
+
+    focus() {
+      this.$refs.input.focus()
+      this.$nextTick(() => {
+        this.$refs.input.select()
+      })
     }
   },
 
